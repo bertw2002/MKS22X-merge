@@ -7,7 +7,7 @@ public class Merge{
 
   }
   //helper for mergesort
-  private static void merge(int[] data1, int[] data2){
+  public static int[] merge(int[] data1, int[] data2){
     int[] newData = new int[data1.length + data2.length];
     int counter = 0;
     int count1 = 0;
@@ -23,19 +23,26 @@ public class Merge{
       counter++;
     }
 
-    if (count1 < data1.length){
-      while (count1 < data1.length){
-        newData[counter] = data1[count1];
-        counter++;
-        count1++;
-      }
+    while (count1 < data1.length){
+      newData[counter] = data1[count1];
+      counter++;
+      count1++;
     }
-    if (count2 < data2.length){
-      while (count2 < data2.length){
-        newData[counter] = data2[count2];
-        counter++;
-        count2++;
-      }
+    while (count2 < data2.length){
+      newData[counter] = data2[count2];
+      counter++;
+      count2++;
+    }
+
+    return newData;
+  }
+  public static void main(String[] args){
+    int[] data1 = {0, 3, 4, 5, 10};
+    int[] data2 = {1, 2, 6, 15, 100};
+    System.out.println("\n" + "Testing Merge" + "\n");
+    int[] newArr = merge(data1, data2);
+    for (int x = 0; x < newArr.length; x++){
+      System.out.println(newArr[x]);
     }
   }
 }
