@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class Merge{
   /*sort the array from least to greatest value. This is a wrapper function*/
   public static void mergesort(int[] data){
@@ -21,15 +22,14 @@ public class Merge{
     int[] data1 = new int[med - lo + 1];
     //dont add one because it the arrary starts at med + 1
     int[] data2 = new int[hi - med];
-    int counter = 1;
+    int counter = lo;
     int count1 = 0;
     int count2 = 0;
   //testing purposes
-/*
+//============================================================================
     System.out.println("ACTUAL DATA: ");
-    for ( int x = 0; x < data.length; x++){
-      System.out.println(data[x]);
-    }*/
+    System.out.println(Arrays.toString(data));
+//============================================================================
     //intialize temp arrays
     for (int x = 0; x < (med - lo + 1); x++){
       data1[x] = data[lo + x];
@@ -38,17 +38,15 @@ public class Merge{
       data2[y] = data[med + 1 + y];
     }
     //testing purposes
-/*
+//============================================================================
     System.out.println("DATA1: ");
-    for ( int x = 0; x < data1.length; x++){
-      System.out.println(data1[x]);
-    }
-    System.out.println("DATA2: ");
-    for ( int x = 0; x < data2.length; x++){
-      System.out.println(data2[x]);
-    }*/
+    System.out.println(Arrays.toString(data1));
+    System.out.println("DATA2: " + "");
+    System.out.println(Arrays.toString(data2));
+//============================================================================
     //loops thru initially to find smaller values.
     while (count1 < data1.length && count2 < data2.length){
+      //this is where the error happens
       if (data1[count1] <= data2[count2]){
         data[counter] = data1[count1];
         count1++;
@@ -82,8 +80,6 @@ public class Merge{
     int[] data = {1, 12, 6, 15, 100, 3, 53, 5};
     System.out.println("\n" + "Testing mergesort" + "\n");
     mergesort(data);
-    for (int x = 0; x < data.length; x++){
-      System.out.println(data[x]);
-    }
+    System.out.println(Arrays.toString(data));
   }
 }
