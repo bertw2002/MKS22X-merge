@@ -27,8 +27,8 @@ public class Merge{
     int count2 = 0;
   //testing purposes
 //============================================================================
-    System.out.println("ACTUAL DATA: ");
-    System.out.println(Arrays.toString(data));
+  //  System.out.println("ACTUAL DATA: ");
+    //System.out.println(Arrays.toString(data));
 //============================================================================
     //intialize temp arrays
     for (int x = 0; x < (med - lo + 1); x++){
@@ -39,10 +39,10 @@ public class Merge{
     }
     //testing purposes
 //============================================================================
-    System.out.println("DATA1: ");
+  /*  System.out.println("DATA1: ");
     System.out.println(Arrays.toString(data1));
     System.out.println("DATA2: " + "");
-    System.out.println(Arrays.toString(data2));
+    System.out.println(Arrays.toString(data2));*/
 //============================================================================
     //loops thru initially to find smaller values.
     while (count1 < data1.length && count2 < data2.length){
