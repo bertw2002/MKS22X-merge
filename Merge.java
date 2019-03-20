@@ -1,10 +1,28 @@
 import java.util.Arrays;
 public class Merge{
+  //optimized version
+  private static void insertionSort(int[] data, int lo, int hi){
+    int compare;
+    for (int x = lo; x < hi; x++){
+      compare = data[x];
+      int count2 = x;
+      while (count2 > lo && compare < data[count2 - 1]){
+        data[count2] = data[count2 - 1];
+        count2--;
+      }
+      data[count2] = compare;
+    }
+  }
   /*sort the array from least to greatest value. This is a wrapper function*/
   public static void mergesort(int[] data){
     mergesort(data, 0, data.length - 1);
   }
   private static void mergesort(int[] data, int lo, int hi){
+    int threshold = 15;
+
+    if ((hi - lo) < threshold){
+      insertionSort(data, lo, hi);
+    }
     if (lo >= hi){
       return;
     }
@@ -77,6 +95,7 @@ public class Merge{
     for (int x = 0; x < newArr.length; x++){
       System.out.println(newArr[x]);
     }*/
+      System.out.println("\n" + "not optimized" + "\n");
     int[] data = {1, 12, 6, 15, 100, 3, 53, 5};
     System.out.println("\n" + "Testing mergesort" + "\n");
     mergesort(data);
