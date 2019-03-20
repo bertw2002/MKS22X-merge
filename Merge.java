@@ -95,10 +95,10 @@ public class Merge{
     for (int x = 0; x < newArr.length; x++){
       System.out.println(newArr[x]);
     }*/
-      System.out.println("\n" + "not optimized" + "\n");
+      /*System.out.println("\n" + "not optimized" + "\n");
     int[] data = {1, 12, 6, 15, 100, 3, 53, 5};
     System.out.println("\n" + "Testing mergesort" + "\n");
     mergesort(data);
-    System.out.println(Arrays.toString(data));
+    System.out.println(Arrays.toString(data));*/
   }
 }
