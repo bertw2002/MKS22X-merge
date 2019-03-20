@@ -18,7 +18,7 @@ public class Merge{
     mergesort(data, 0, data.length - 1);
   }
   private static void mergesort(int[] data, int lo, int hi){
-    int threshold = 15;
+    int threshold = 60;
 
     if ((hi - lo) < threshold){
       insertionSort(data, lo, hi);
